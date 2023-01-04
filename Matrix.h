@@ -90,7 +90,7 @@ public:
 		return nozero;
 	}
 	/*
-	стара версія findBigAlessB. раніше було так:
+	past version findBigAlessB:
 	int bigAlessB(T A, T B, Matrix<bool>& bigles = nullptr) {
 		int bidAlessB = 0;
 		for (unsigned i{ 0 }; i < column; i++)
