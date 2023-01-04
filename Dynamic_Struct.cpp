@@ -16,8 +16,8 @@ HANDLE HSTDOUT = GetStdHandle(STD_OUTPUT_HANDLE);// for beauty
 #define BEK SetConsoleTextAttribute(HSTDOUT, 32);// for beauty
 
 constexpr auto STIMESMOL = 5000LU;// smol pause (5 sec)					// can be changed
-constexpr auto STIMEBIG = 10000LU;	// big pause	(10 sec)
-constexpr unsigned int LINE_COUNT{ 13 };	// standart					// can be changed 
+constexpr auto STIMEBIG = 10000LU;// big pause	(10 sec)
+constexpr unsigned int LINE_COUNT{ 13 };	// standart				// can be changed 
 constexpr unsigned int COLUMN_COUNT{ 13 };	// standart
 constexpr unsigned int ELEMENT_COUNT{ COLUMN_COUNT * LINE_COUNT};// standart
 
