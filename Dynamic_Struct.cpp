@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
 
 	GOL cout << "Сreate random matrix of size: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
 		 << ", count of elements: "<< ELEMENT_COUNT <<" \n\n";
-	Sleep(STIMESMOL);
+	Sleep(STIMESMOL/2);
 	STD;//<<-- if the line ends with a color change, then i must set ; 
 		//because the visual studio goes crazy and starts sculpting tab (probably thinks that ; no)
 	
