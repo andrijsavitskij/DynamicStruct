@@ -14,9 +14,10 @@ HANDLE HSTDOUT = GetStdHandle(STD_OUTPUT_HANDLE);// for beauty
 #define GRE SetConsoleTextAttribute(HSTDOUT, 2);
 #define BLU SetConsoleTextAttribute(HSTDOUT, 3);
 #define BEK SetConsoleTextAttribute(HSTDOUT, 32);// for beauty
-constexpr auto STIMESMOL = 50LU;// smol pause (5 sec)					// можна зм≥нювати 
+
+constexpr auto STIMESMOL = 50LU;// smol pause (5 sec)					// can be changed
 constexpr auto STIMEBIG = 10LU;	// big pause	(10 sec)
-constexpr unsigned int LINE_COUNT{ 13 };	// standart					// можна зм≥нювати 
+constexpr unsigned int LINE_COUNT{ 13 };	// standart					// can be changed 
 constexpr unsigned int COLUMN_COUNT{ 13 };	// standart
 constexpr unsigned int ELEMENT_COUNT{ COLUMN_COUNT * LINE_COUNT};// standart
 
@@ -36,11 +37,11 @@ int main(int argc, char* argv[]) {
 	GOL cout << "√енеруетсь три квадратнi матрицi розмiром: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
 		 << ", кiлтькiсть Їлементiтiв: "<< ELEMENT_COUNT <<" \n\n";
 	Sleep(STIMESMOL);
-	STD; //<<-- €кщо р€док зак≥нчюЇтьс€ зм≥ною кольору то треба ставити ; бо студ≥€(у €к≥й € це написав) сходить з розуму ≥ починаЇ л≥пити tab (напевно думаЇ що ; немаЇ) 
-
+	STD;//<<-- if the line ends with a color change, then i must set ; 
+		//because the visual studio goes crazy and starts sculpting tab (probably thinks that ; no)
+	
 	//////////////////////////Matrix gen///////////////////////////////////
-	// трошки заморочивс€ ≥ зробив л€мбду, бо € так вм≥ю))
-
+	// I got a little worried and made a lambda, because I know how))
 	Matrix<int> matInt(LINE_COUNT, COLUMN_COUNT, 
 		[](int& i) {
 			i = rand() % 10;
@@ -86,26 +87,26 @@ int main(int argc, char* argv[]) {
 
 	PUR cout << "\n\t\t\t÷IЋќ„»—≈Ћ№Ќј ћј“–»÷я\n";
 	/* 
-		так тут goto, але це зручний ≥нструмент €кщо використовувати його на малих маштабах.
-		«ам≥сть goto тут маожно було написати while(true), але це ж тесаме goto виходть)   
+		yes, goto here, but it's a handy tool if use it that way.
+		Instead of goto, it was possible to write while(true), but it is same goto 
 	*/
 second1:
-	matInt.get_lambda()(Ai); 
-	matInt.get_lambda()(Bi);
+	matInt.getLambda()(Ai); 
+	matInt.getLambda()(Bi);
 	if (Ai >= Bi) goto second1;
 	STD bigLes<int>(matInt, Ai, Bi);
 
-	PUR cout << "\n\t\t\t—»ћ¬ќЋ№Ќј ћј“–»÷я\n";// в≥д ' ' до 128 символу 
+	PUR cout << "\n\t\t\t—»ћ¬ќЋ№Ќј ћј“–»÷я\n"; 
 second2:
-	matChar.get_lambda()(Ac);
-	matChar.get_lambda()(Bc);
+	matChar.getLambda()(Ac);
+	matChar.getLambda()(Bc);
 	if (Ac >= Bc) goto second2;
 	STD bigLes<char>(matChar, Ac, Bc);
 
-	PUR cout << "\n\t\t\tƒ–ќЅќ¬ј ћј“–»÷я\n";// в≥д 0.0 до 0.999 
+	PUR cout << "\n\t\t\tƒ–ќЅќ¬ј ћј“–»÷я\n";
 second3:
-	matDouble.get_lambda()(Ad);
-	matDouble.get_lambda()(Bd);
+	matDouble.getLambda()(Ad);
+	matDouble.getLambda()(Bd);
 	if (Ad >= Bd) goto second3;
 	STD bigLes<double>(matDouble, Ad, Bd);
 
@@ -142,11 +143,11 @@ template<typename T> void nonZero(Matrix<T> matrix, T zeromin,T zeromax) {
 		}
 	}
 	for (unsigned i = 0; i < LINE_COUNT; i++){
-		STD; cout << endl;
+		STD cout << endl;
 		for (unsigned j = 0; j < COLUMN_COUNT; j++){
 			if (lines[j]) RED;
 			if (nonzerocol[i][j]) BEK;
-			cout << matrix[i][j]; STD; cout << " "; STD;
+			cout << matrix[i][j]; STD cout << " ";
 		}
 	}
 	BLU;
@@ -173,7 +174,7 @@ template<typename T> void sortCol(Matrix<T> matrix) {
 	for (unsigned i = 0; i < LINE_COUNT; i++) {
 		std::cout << std::endl;
 		for (unsigned j = 0; j < COLUMN_COUNT; j++) {
-			SetConsoleTextAttribute(HSTDOUT, (j%15) + 1);// (j % 15) -- тому що у консол≥ всього 4 б≥ти кольору (16 кольор≥в)
+			SetConsoleTextAttribute(HSTDOUT, (j%15) + 1);// (j % 15) -- because the console only has 4 color bits (16 colors)
 			std::cout << matrix[i][j] << " ";
 		}
 		STD;

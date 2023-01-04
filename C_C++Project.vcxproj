@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C_C++Project.cpp" />
     <ClCompile Include="Dynamic_Struct.cpp" />
   </ItemGroup>
   <ItemGroup>
