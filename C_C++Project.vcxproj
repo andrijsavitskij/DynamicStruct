@@ -24,6 +24,7 @@
     <ProjectGuid>{5e52ae35-b0ff-4061-8e12-b5cecebc25bb}</ProjectGuid>
     <RootNamespace>CCProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DynamicStruct</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
