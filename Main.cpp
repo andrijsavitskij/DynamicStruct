@@ -4,7 +4,7 @@
 #include <ctime>
 #include <windows.h>
 #include <string>
-#include "Dynamic_Struct.h"
+#include "Matrix.h"
 
 HANDLE HSTDOUT = GetStdHandle(STD_OUTPUT_HANDLE);// for beauty
 #define STD SetConsoleTextAttribute(HSTDOUT, 7);
