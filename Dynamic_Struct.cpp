@@ -15,8 +15,8 @@ HANDLE HSTDOUT = GetStdHandle(STD_OUTPUT_HANDLE);// for beauty
 #define BLU SetConsoleTextAttribute(HSTDOUT, 3);
 #define BEK SetConsoleTextAttribute(HSTDOUT, 32);// for beauty
 
-constexpr auto STIMESMOL = 50LU;// smol pause (5 sec)					// can be changed
-constexpr auto STIMEBIG = 10LU;	// big pause	(10 sec)
+constexpr auto STIMESMOL = 5000LU;// smol pause (5 sec)					// can be changed
+constexpr auto STIMEBIG = 10000LU;	// big pause	(10 sec)
 constexpr unsigned int LINE_COUNT{ 13 };	// standart					// can be changed 
 constexpr unsigned int COLUMN_COUNT{ 13 };	// standart
 constexpr unsigned int ELEMENT_COUNT{ COLUMN_COUNT * LINE_COUNT};// standart
@@ -34,8 +34,8 @@ int main(int argc, char* argv[]) {
 	srand((unsigned)time(0));
 	cout << std::fixed << std::setprecision(3); // for beauty
 
-	GOL cout << "Ãåíåðóåòñü òðè êâàäðàòíi ìàòðèöi ðîçìiðîì: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
-		 << ", êiëòüêiñòü ºëåìåíòiòiâ: "<< ELEMENT_COUNT <<" \n\n";
+	GOL cout << "ÃƒÃ¥Ã­Ã¥Ã°Ã³Ã¥Ã²Ã±Ã¼ Ã²Ã°Ã¨ ÃªÃ¢Ã Ã¤Ã°Ã Ã²Ã­i Ã¬Ã Ã²Ã°Ã¨Ã¶i Ã°Ã®Ã§Ã¬iÃ°Ã®Ã¬: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
+		 << ", ÃªiÃ«Ã²Ã¼ÃªiÃ±Ã²Ã¼ ÂºÃ«Ã¥Ã¬Ã¥Ã­Ã²iÃ²iÃ¢: "<< ELEMENT_COUNT <<" \n\n";
 	Sleep(STIMESMOL);
 	STD;//<<-- if the line ends with a color change, then i must set ; 
 		//because the visual studio goes crazy and starts sculpting tab (probably thinks that ; no)
@@ -58,25 +58,25 @@ int main(int argc, char* argv[]) {
 	//////////////////////////non zer///////////////////////////////////
 
 	GOL;
-	cout << "Ó ïåðøîìó çàâäàííi ïåðåâiðÿåìî ÷è ý ó ìàòðèöi êîëîíêè ç íóëÿìè.\n ( Äëÿ êîæíîãî òèïó ìàòðèö³ áóëè îáðàí³ ð³çí³ çíà÷åííÿ \"Íóëÿ\" çà äëÿ íàãëÿäíîñò³)";
-	RED cout << "Êîëîíêè ç íóëÿìè çìiíþþòü êîëið\n";
+	cout << "Ã“ Ã¯Ã¥Ã°Ã¸Ã®Ã¬Ã³ Ã§Ã Ã¢Ã¤Ã Ã­Ã­i Ã¯Ã¥Ã°Ã¥Ã¢iÃ°Ã¿Ã¥Ã¬Ã® Ã·Ã¨ Ã½ Ã³ Ã¬Ã Ã²Ã°Ã¨Ã¶i ÃªÃ®Ã«Ã®Ã­ÃªÃ¨ Ã§ Ã­Ã³Ã«Ã¿Ã¬Ã¨.\n ( Ã„Ã«Ã¿ ÃªÃ®Ã¦Ã­Ã®Ã£Ã® Ã²Ã¨Ã¯Ã³ Ã¬Ã Ã²Ã°Ã¨Ã¶Â³ Ã¡Ã³Ã«Ã¨ Ã®Ã¡Ã°Ã Ã­Â³ Ã°Â³Ã§Ã­Â³ Ã§Ã­Ã Ã·Ã¥Ã­Ã­Ã¿ \"ÃÃ³Ã«Ã¿\" Ã§Ã  Ã¤Ã«Ã¿ Ã­Ã Ã£Ã«Ã¿Ã¤Ã­Ã®Ã±Ã²Â³)";
+	RED cout << "ÃŠÃ®Ã«Ã®Ã­ÃªÃ¨ Ã§ Ã­Ã³Ã«Ã¿Ã¬Ã¨ Ã§Ã¬iÃ­Ã¾Ã¾Ã²Ã¼ ÃªÃ®Ã«iÃ°\n";
 	Sleep(STIMESMOL);
 	STD;
 
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ–IÃ‹ÃŽÃ—ÃˆÃ‘Ã…Ã‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD nonZero<int>(matInt, 0,0);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ‘ÃˆÃŒÃ‚ÃŽÃ‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD nonZero<char>(matChar, ' ',' ');
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ„ÃÃŽÃÃŽÃ‚Ã€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD nonZero<double>(matDouble, 0.0, 0.09999);
 
 	//////////////////////////big les///////////////////////////////////
 
 	GOL;
-	cout << "\nÓ äðóãîìó çàâäàííi äëÿ êîæíî¿ ìàòðèöi îêðåìî çàäàþòñÿ ðàäîìíi À òà Â.\n";
-	cout << "Ïiäðàõîâóåòüñÿ ¿õ êiëüêiñòü òà ïiäêðåñëþåòñÿ ¿õ ïîçèöiÿ ó ìàòðèöi.\n";
+	cout << "\nÃ“ Ã¤Ã°Ã³Ã£Ã®Ã¬Ã³ Ã§Ã Ã¢Ã¤Ã Ã­Ã­i Ã¤Ã«Ã¿ ÃªÃ®Ã¦Ã­Ã®Â¿ Ã¬Ã Ã²Ã°Ã¨Ã¶i Ã®ÃªÃ°Ã¥Ã¬Ã® Ã§Ã Ã¤Ã Ã¾Ã²Ã±Ã¿ Ã°Ã Ã¤Ã®Ã¬Ã­i Ã€ Ã²Ã  Ã‚.\n";
+	cout << "ÃiÃ¤Ã°Ã ÃµÃ®Ã¢Ã³Ã¥Ã²Ã¼Ã±Ã¿ Â¿Ãµ ÃªiÃ«Ã¼ÃªiÃ±Ã²Ã¼ Ã²Ã  Ã¯iÃ¤ÃªÃ°Ã¥Ã±Ã«Ã¾Ã¥Ã²Ã±Ã¿ Â¿Ãµ Ã¯Ã®Ã§Ã¨Ã¶iÃ¿ Ã³ Ã¬Ã Ã²Ã°Ã¨Ã¶i.\n";
 	Sleep(STIMEBIG + STIMEBIG);
 	STD;
 
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
 	double Ad, Bd;
 
 
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ–IÃ‹ÃŽÃ—ÃˆÃ‘Ã…Ã‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	/* 
 		yes, goto here, but it's a handy tool if use it that way.
 		Instead of goto, it was possible to write while(true), but it is same goto 
@@ -96,14 +96,14 @@ second1:
 	if (Ai >= Bi) goto second1;
 	STD bigLes<int>(matInt, Ai, Bi);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n"; 
+	PUR cout << "\n\t\t\tÃ‘ÃˆÃŒÃ‚ÃŽÃ‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n"; 
 second2:
 	matChar.getLambda()(Ac);
 	matChar.getLambda()(Bc);
 	if (Ac >= Bc) goto second2;
 	STD bigLes<char>(matChar, Ac, Bc);
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ„ÃÃŽÃÃŽÃ‚Ã€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 second3:
 	matDouble.getLambda()(Ad);
 	matDouble.getLambda()(Bd);
@@ -113,20 +113,20 @@ second3:
 	//////////////////////////sortcol///////////////////////////////////
 
 	GOL;
-	cout << "\nÓ òðåòüîìó çàâäàííi ìàòðèöÿ ñîðòóåòüñÿ çà ñóìîþ ýëåìåíòiâ ó êîëîíêàõ.\n";
-	cout << "Êîëîíêè ìàþòü ñâié êîëið,\n";
-	cout << "ïiñëÿ ñîðòóâàííÿ ìîæëèâî ïîáà÷èòè ÿê áóâ âiäñîðòîâàíèé ìàñèâ.\n";
+	cout << "\nÃ“ Ã²Ã°Ã¥Ã²Ã¼Ã®Ã¬Ã³ Ã§Ã Ã¢Ã¤Ã Ã­Ã­i Ã¬Ã Ã²Ã°Ã¨Ã¶Ã¿ Ã±Ã®Ã°Ã²Ã³Ã¥Ã²Ã¼Ã±Ã¿ Ã§Ã  Ã±Ã³Ã¬Ã®Ã¾ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²iÃ¢ Ã³ ÃªÃ®Ã«Ã®Ã­ÃªÃ Ãµ.\n";
+	cout << "ÃŠÃ®Ã«Ã®Ã­ÃªÃ¨ Ã¬Ã Ã¾Ã²Ã¼ Ã±Ã¢iÃ© ÃªÃ®Ã«iÃ°,\n";
+	cout << "Ã¯iÃ±Ã«Ã¿ Ã±Ã®Ã°Ã²Ã³Ã¢Ã Ã­Ã­Ã¿ Ã¬Ã®Ã¦Ã«Ã¨Ã¢Ã® Ã¯Ã®Ã¡Ã Ã·Ã¨Ã²Ã¨ Ã¿Ãª Ã¡Ã³Ã¢ Ã¢iÃ¤Ã±Ã®Ã°Ã²Ã®Ã¢Ã Ã­Ã¨Ã© Ã¬Ã Ã±Ã¨Ã¢.\n";
 	Sleep(STIMEBIG + STIMEBIG);
 	STD;
 
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ–IÃ‹ÃŽÃ—ÃˆÃ‘Ã…Ã‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD sortCol<int>(matInt);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ‘ÃˆÃŒÃ‚ÃŽÃ‹ÃœÃÃ€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD sortCol<char>(matChar);
 
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tÃ„ÃÃŽÃÃŽÃ‚Ã€ ÃŒÃ€Ã’ÃÃˆÃ–ÃŸ\n";
 	STD sortCol<double>(matDouble);
 
 }
