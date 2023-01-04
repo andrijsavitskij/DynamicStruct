@@ -30,12 +30,11 @@ template<typename T> void bigLes(Matrix<T>, T, T);
 template<typename T> void sortCol(Matrix<T>);
 
 int main(int argc, char* argv[]) {
-	setlocale(LC_ALL, "Ukrainian");
 	srand((unsigned)time(0));
 	cout << std::fixed << std::setprecision(3); // for beauty
 
-	GOL cout << "Ãåíåðóåòñü òðè êâàäðàòíi ìàòðèöi ðîçìiðîì: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
-		 << ", êiëòüêiñòü ºëåìåíòiòiâ: "<< ELEMENT_COUNT <<" \n\n";
+	GOL cout << "Сreate random matrix of size: "<< LINE_COUNT <<"*"<<COLUMN_COUNT
+		 << ", count of elements: "<< ELEMENT_COUNT <<" \n\n";
 	Sleep(STIMESMOL);
 	STD;//<<-- if the line ends with a color change, then i must set ; 
 		//because the visual studio goes crazy and starts sculpting tab (probably thinks that ; no)
@@ -58,25 +57,25 @@ int main(int argc, char* argv[]) {
 	//////////////////////////non zer///////////////////////////////////
 
 	GOL;
-	cout << "Ó ïåðøîìó çàâäàííi ïåðåâiðÿåìî ÷è ý ó ìàòðèöi êîëîíêè ç íóëÿìè.\n ( Äëÿ êîæíîãî òèïó ìàòðèö³ áóëè îáðàí³ ð³çí³ çíà÷åííÿ \"Íóëÿ\" çà äëÿ íàãëÿäíîñò³)";
-	RED cout << "Êîëîíêè ç íóëÿìè çìiíþþòü êîëið\n";
+	cout << "In the first task, we check whether there are columns with zeros in the matrix.\n (For each type of matrix, a different value \"Zero\" is selected for clarity)]\n";
+	RED cout << "Columns with zeros change color\n";
 	Sleep(STIMESMOL);
 	STD;
 
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tINTEGER MATRIX\n";
 	STD nonZero<int>(matInt, 0,0);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tSYMBOL MATRIX\n";
 	STD nonZero<char>(matChar, ' ',' ');
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tFRACTIONAL MATRIX\n";
 	STD nonZero<double>(matDouble, 0.0, 0.09999);
 
 	//////////////////////////big les///////////////////////////////////
 
 	GOL;
-	cout << "\nÓ äðóãîìó çàâäàííi äëÿ êîæíî¿ ìàòðèöi îêðåìî çàäàþòñÿ ðàäîìíi À òà Â.\n";
-	cout << "Ïiäðàõîâóåòüñÿ ¿õ êiëüêiñòü òà ïiäêðåñëþåòñÿ ¿õ ïîçèöiÿ ó ìàòðèöi.\n";
+	cout << "\nIn the second task, the radomes A and B are set separately for each matrix.\n";
+	cout << "Their number is calculated and their position in the matrix is underlined.\n";
 	Sleep(STIMEBIG + STIMEBIG);
 	STD;
 
@@ -84,26 +83,25 @@ int main(int argc, char* argv[]) {
 	char Ac, Bc;
 	double Ad, Bd;
 
-
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
 	/* 
 		yes, goto here, but it's a handy tool if use it that way.
 		Instead of goto, it was possible to write while(true), but it is same goto 
 	*/
+	PUR cout << "\n\t\t\tINTEGER MATRIX\n";
 second1:
 	matInt.getLambda()(Ai); 
 	matInt.getLambda()(Bi);
 	if (Ai >= Bi) goto second1;
 	STD bigLes<int>(matInt, Ai, Bi);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n"; 
+	PUR cout << "\n\t\t\tSYMBOL MATRIX\n"; 
 second2:
 	matChar.getLambda()(Ac);
 	matChar.getLambda()(Bc);
 	if (Ac >= Bc) goto second2;
 	STD bigLes<char>(matChar, Ac, Bc);
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tFRACTIONAL MATRIX\n";
 second3:
 	matDouble.getLambda()(Ad);
 	matDouble.getLambda()(Bd);
@@ -113,20 +111,19 @@ second3:
 	//////////////////////////sortcol///////////////////////////////////
 
 	GOL;
-	cout << "\nÓ òðåòüîìó çàâäàííi ìàòðèöÿ ñîðòóåòüñÿ çà ñóìîþ ýëåìåíòiâ ó êîëîíêàõ.\n";
-	cout << "Êîëîíêè ìàþòü ñâié êîëið,\n";
-	cout << "ïiñëÿ ñîðòóâàííÿ ìîæëèâî ïîáà÷èòè ÿê áóâ âiäñîðòîâàíèé ìàñèâ.\n";
+	cout << "\nIn the third task, the matrix is sorted by the sum of the elements in the columns.\n";
+	cout << "The columns have their own color, after sorting, it is possible to see how the array was sorted.\n";
 	Sleep(STIMEBIG + STIMEBIG);
 	STD;
 
-	PUR cout << "\n\t\t\tÖIËÎ×ÈÑÅËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tINTEGER MATRIX\n";
 	STD sortCol<int>(matInt);
 
-	PUR cout << "\n\t\t\tÑÈÌÂÎËÜÍÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tSYMBOL MATRIX\n";
 	STD sortCol<char>(matChar);
 
 
-	PUR cout << "\n\t\t\tÄÐÎÁÎÂÀ ÌÀÒÐÈÖß\n";
+	PUR cout << "\n\t\t\tFRACTIONAL MATRIX\n";
 	STD sortCol<double>(matDouble);
 
 }
